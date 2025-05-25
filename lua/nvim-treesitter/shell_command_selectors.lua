@@ -234,7 +234,7 @@ end
 function M.select_download_commands(repo, project_name, cache_folder, revision, prefer_git)
   local can_use_tar = vim.fn.executable "tar" == 1 and vim.fn.executable "curl" == 1
   local is_github = repo.url:find("github.com", 1, true)
-  local is_gitlab = repo.url:find("gitlab.com", 1, true)
+  local is_gitlab = repo.url:find("gitlab.com", 1, false)
 
   revision = revision or repo.branch or "master"
 
